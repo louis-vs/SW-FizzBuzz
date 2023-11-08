@@ -1,4 +1,12 @@
-for (let i = 1; i <= 100; i++) {
+const prompt = require("prompt-sync")({sigint: true});
+
+let maximumNumber = undefined;
+
+while (isNaN(Number(maximumNumber)) || maximumNumber <= 0) {
+    maximumNumber = prompt("What number should I go up to? ");
+}
+
+for (let i = 1; i <= maximumNumber; i++) {
     let output = [];
     if (i % 3 === 0) {
         output.push("Fizz");
